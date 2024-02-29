@@ -32,6 +32,9 @@
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
+    <PropertyGroup>
+        <PostBuildEvent>move TRHook.dll "E:\Games\Steam\steamapps\common\Transport Defender\Mods"</PostBuildEvent>
+    </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
             <HintPath>..\packages\Lib.Harmony.2.3.0\lib\net472\0Harmony.dll</HintPath>
@@ -53,6 +56,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Hook\SpeedHackChecker.cs"/>
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
