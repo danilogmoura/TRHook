@@ -11,4 +11,14 @@ namespace TRHook.Hook
             return false;
         }
     }
+    
+    [HarmonyPatch(typeof(ComponentExtensions), "GetReassemblyPrice")]
+    public class ComponentExtensionsPath_GetReassemblyPrice
+    {
+        public static bool Prefix(BigNum __result)
+        {
+            __result = 1;
+            return false;
+        }
+    }
 }
