@@ -57,6 +57,9 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Hook\ComponentExtensions.cs"/>
+        <Compile Include="Hook\DamageSystem.cs"/>
+        <Compile Include="Hook\GameEntity.cs"/>
+        <Compile Include="Hook\GameLogic.cs" />
         <Compile Include="Hook\InitAbilitySystem.cs"/>
         <Compile Include="Hook\SpeedHackChecker.cs"/>
         <Compile Include="Main.cs"/>
