@@ -57,6 +57,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Hook\ComponentExtensions.cs"/>
+        <Compile Include="Hook\InitAbilitySystem.cs"/>
         <Compile Include="Hook\SpeedHackChecker.cs"/>
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>

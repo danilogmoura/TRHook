@@ -11,7 +11,7 @@ namespace TRHook.Hook
             return false;
         }
     }
-    
+
     [HarmonyPatch(typeof(ComponentExtensions), "GetReassemblyPrice")]
     public class ComponentExtensionsPath_GetReassemblyPrice
     {
