@@ -24,13 +24,33 @@ namespace TRHook.Hook
     //     }
     // }
 
-    [HarmonyPatch(typeof(ComponentExtensions), "GetFeatureUpgradePrice")]
-    public class ComponentExtensionsPath_GetFeatureUpgradePrice
-    {
-        public static bool Pretfix(GameEntity featureEntity, ref long levels)
-        {
-            levels = 1;
-            return true;
-        }
-    }
+    // using System;
+    // using UnityEngine;
+    //
+    // // Token: 0x020000B4 RID: 180
+    // public static partial class ComponentExtensions
+    // {
+    //     // Token: 0x0600037E RID: 894 RVA: 0x0000AAAC File Offset: 0x00008EAC
+    //     public static BigNum GetFeatureUpgradePrice(this GameEntity featureEntity, long levels)
+    //     {
+    //         IPrice price = featureEntity.feature.price;
+    //         BigNum bigNum = price.GetTotalPrice(featureEntity.level.value + levels) - price.GetTotalPrice(featureEntity.level.value);
+    //         if (featureEntity.hasPrestigeConfig && featureEntity.prestigeLevel.value > 0L)
+    //         {
+    //             bigNum *= Math.Pow((double)featureEntity.prestigeConfig.priceIncreaseMultPerPrestige, (double)featureEntity.prestigeLevel.value);
+    //         }
+    //         return bigNum;
+    //     }
+    // }
+
+    // [HarmonyPatch(typeof(ComponentExtensions), "GetFeatureUpgradePrice", typeof(GameEntity), typeof(long))]
+    // public class ComponentExtensionsPath_GetFeatureUpgradePrice
+    // {
+    //     public static bool Pretfix(GameEntity featureEntity, BigNum __result, ref long levels)
+    //     {
+    //         levels = 1;
+    //         // __result = new BigNum(1);
+    //         return true;
+    //     }
+    // }
 }

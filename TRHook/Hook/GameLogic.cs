@@ -1,6 +1,4 @@
-﻿using HarmonyLib;
-
-namespace TRHook.Hook
+﻿namespace TRHook.Hook
 {
     // [HarmonyPatch(typeof(GameLogic), "GetEnemyHp")]
     // public class GameLogic_GetEnemyHp

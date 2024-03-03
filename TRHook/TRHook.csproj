@@ -36,18 +36,17 @@
         <PostBuildEvent>move TRHook.dll "E:\Games\Steam\steamapps\common\Transport Defender\Mods"</PostBuildEvent>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="0Harmony, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-            <HintPath>..\packages\Lib.Harmony.2.3.0\lib\net472\0Harmony.dll</HintPath>
+        <Reference Include="0Harmony">
+          <HintPath>E:\Games\Steam\steamapps\common\Transport Defender\MelonLoader\0Harmony.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp">
             <HintPath>E:\Games\Steam\steamapps\common\Transport Defender\td_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="MelonLoader">
-            <HintPath>E:\Games\Steam\steamapps\common\Transport Defender\MelonLoader\MelonLoader.dll</HintPath>
+          <HintPath>E:\Games\Steam\steamapps\common\Transport Defender\MelonLoader\MelonLoader.dll</HintPath>
         </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
-        <Reference Include="System.Xml"/>
         <Reference Include="UnityEngine">
             <HintPath>E:\Games\Steam\steamapps\common\Transport Defender\td_Data\Managed\UnityEngine.dll</HintPath>
         </Reference>
@@ -58,10 +57,14 @@
     <ItemGroup>
         <Compile Include="Hook\ComponentExtensions.cs"/>
         <Compile Include="Hook\DamageSystem.cs"/>
+        <Compile Include="Hook\FeatureUpgradeDataSystem.cs" />
         <Compile Include="Hook\GameEntity.cs"/>
         <Compile Include="Hook\GameLogic.cs" />
         <Compile Include="Hook\InitAbilitySystem.cs"/>
+        <Compile Include="Hook\ResourcesExtensions.cs" />
         <Compile Include="Hook\SpeedHackChecker.cs"/>
+        <Compile Include="Hook\SteamInventorySystem.cs" />
+        <Compile Include="Hook\UISteamItemShopSystem.cs" />
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
