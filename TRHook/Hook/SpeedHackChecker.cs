@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using MelonLoader;
 
 namespace TRHook.Hook
 {
@@ -33,7 +32,6 @@ namespace TRHook.Hook
     {
         private static bool Prefix()
         {
-            // MelonLogger.Msg("SpeedHackChecker.Start was called: Disabling SpeedHackChecker.");
             return false;
         }
     }

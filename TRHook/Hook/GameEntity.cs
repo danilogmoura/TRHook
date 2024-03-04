@@ -42,35 +42,6 @@ namespace TRHook.Hook
     // // Token: 0x020000C1 RID: 193
     // public sealed partial class GameEntity : Entity
     // {
-    //     // Token: 0x060007DC RID: 2012 RVA: 0x00015F2C File Offset: 0x0001432C
-    //     public void AddSteamCoins(int newValue)
-    //     {
-    //         SteamCoinsComponent steamCoinsComponent = base.CreateComponent<SteamCoinsComponent>(160);
-    //         steamCoinsComponent.value = newValue;
-    //         base.AddComponent(160, steamCoinsComponent);
-    //     }
-    // }
-
-    // [HarmonyPatch(typeof(GameEntity), "AddSteamCoins")]
-    // public class GameEntity_AddSteamCoins
-    // {
-    //     public static bool Prefix(ref int newValue)
-    //     {
-    //         newValue = 50;
-    //         return true;
-    //     }
-    // }
-
-    // using System;
-    // using System.Collections.Generic;
-    // using Entitas;
-    // using Entitas.Unity;
-    // using Facepunch.Steamworks;
-    // using UnityEngine;
-    //
-    // // Token: 0x020000C1 RID: 193
-    // public sealed partial class GameEntity : Entity
-    // {
     // 	// Token: 0x060007E1 RID: 2017 RVA: 0x00015FB0 File Offset: 0x000143B0
     // 	public void AddSteamConsumeCoinsRequest(int newValue)
     // 	{
@@ -100,27 +71,29 @@ namespace TRHook.Hook
     // // Token: 0x020000C1 RID: 193
     // public sealed partial class GameEntity : Entity
     // {
-    //     // Token: 0x0600069F RID: 1695 RVA: 0x00013DF8 File Offset: 0x000121F8
-    //     public void AddFeature(string newId, long newMaxLevel, IPrice newPrice, FeatureStatMod newStatMod)
+    //     // Token: 0x060007A0 RID: 1952 RVA: 0x0001587C File Offset: 0x00013C7C
+    //     public void AddSentinelPassiveModule(string newId, long newRequiredSentinelLevel, SentinelStatMod newStatMod, ISentinelPrice newPrice, long newMaxLevel)
     //     {
-    //         FeatureComponent featureComponent = base.CreateComponent<FeatureComponent>(89);
-    //         featureComponent.id = newId;
-    //         featureComponent.maxLevel = newMaxLevel;
-    //         featureComponent.price = newPrice;
-    //         featureComponent.statMod = newStatMod;
-    //         base.AddComponent(89, featureComponent);
+    //         SentinelPassiveModuleComponent sentinelPassiveModuleComponent = base.CreateComponent<SentinelPassiveModuleComponent>(148);
+    //         sentinelPassiveModuleComponent.id = newId;
+    //         sentinelPassiveModuleComponent.requiredSentinelLevel = newRequiredSentinelLevel;
+    //         sentinelPassiveModuleComponent.statMod = newStatMod;
+    //         sentinelPassiveModuleComponent.price = newPrice;
+    //         sentinelPassiveModuleComponent.maxLevel = newMaxLevel;
+    //         base.AddComponent(148, sentinelPassiveModuleComponent);
     //     }
     // }
 
-    // [HarmonyPatch(typeof(GameEntity), "AddFeature", typeof(string), typeof(long), typeof(IPrice),
-    //     typeof(FeatureStatMod))]
-    // public class GameEntity_AddFeature
-    // {
-    //     public static bool Prefix(GameEntity __instance, string newId, long newMaxLevel, IPrice newPrice,
-    //         FeatureStatMod newStatMod)
-    //     {
-    //         newPrice = new CPrice(1);
-    //         return true;
-    //     }
-    // }
+    [HarmonyPatch(typeof(GameEntity), "AddSentinelPassiveModule", typeof(string), typeof(long), typeof(SentinelStatMod),
+        typeof(ISentinelPrice), typeof(long))]
+    public class GameEntity_AddSentinelPassiveModule
+    {
+        public static bool Prefix(string newId, long newRequiredSentinelLevel, SentinelStatMod newStatMod,
+            ref ISentinelPrice newPrice, long newMaxLevel)
+        {
+            if (newPrice is CSentinelPrice) newPrice = new CSentinelPrice(1L);
+
+            return true;
+        }
+    }
 }
