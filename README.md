@@ -1,7 +1,5 @@
-# TR Study Mod Project
-
 ## Descrição
-Bem-vindo ao repositório do TR Study Mod! Este projeto é um mod experimental para o jogo Tomb Raider, criado com o objetivo de explorar e aprender sobre as técnicas de hooking dentro do contexto de desenvolvimento de jogos. Através da implementação de diferentes funcionalidades e modificações, buscamos entender melhor como os jogos podem ser alterados e aprimorados em tempo de execução.
+Bem-vindo ao repositório do TR Study Mod! Este projeto é um mod experimental, criado com o objetivo de explorar e aprender sobre as técnicas de hooking dentro do contexto de desenvolvimento de jogos. Através da implementação de diferentes funcionalidades e modificações, buscamos entender melhor como os jogos podem ser alterados e aprimorados em tempo de execução.
 
 ## Objetivos
 - **Aprender Hooking:** O foco principal é estudar como o hooking pode ser utilizado para modificar e interceptar chamadas de função dentro do jogo, permitindo alterações dinâmicas no comportamento do jogo.
