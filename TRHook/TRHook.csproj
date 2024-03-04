@@ -55,8 +55,12 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Hook\CommandResetFeatureSystem.cs" />
+        <Compile Include="Hook\CommandUpgradeFeatureSystem.cs" />
         <Compile Include="Hook\ComponentExtensions.cs"/>
         <Compile Include="Hook\DamageSystem.cs"/>
+        <Compile Include="Hook\FeatureBuilder.cs" />
+        <Compile Include="Hook\FeatureComponent.cs" />
         <Compile Include="Hook\FeatureUpgradeDataSystem.cs" />
         <Compile Include="Hook\GameEntity.cs"/>
         <Compile Include="Hook\GameLogic.cs" />

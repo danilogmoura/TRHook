@@ -51,15 +51,15 @@ namespace TRHook.Hook
     //     }
     // }
 
-    [HarmonyPatch(typeof(GameEntity), "AddSteamCoins")]
-    public class GameEntity_AddSteamCoins
-    {
-        public static bool Prefix(ref int newValue)
-        {
-            newValue = 50;
-            return true;
-        }
-    }
+    // [HarmonyPatch(typeof(GameEntity), "AddSteamCoins")]
+    // public class GameEntity_AddSteamCoins
+    // {
+    //     public static bool Prefix(ref int newValue)
+    //     {
+    //         newValue = 50;
+    //         return true;
+    //     }
+    // }
 
     // using System;
     // using System.Collections.Generic;
@@ -89,4 +89,38 @@ namespace TRHook.Hook
             return true;
         }
     }
+
+    // using System;
+    // using System.Collections.Generic;
+    // using Entitas;
+    // using Entitas.Unity;
+    // using Facepunch.Steamworks;
+    // using UnityEngine;
+    //
+    // // Token: 0x020000C1 RID: 193
+    // public sealed partial class GameEntity : Entity
+    // {
+    //     // Token: 0x0600069F RID: 1695 RVA: 0x00013DF8 File Offset: 0x000121F8
+    //     public void AddFeature(string newId, long newMaxLevel, IPrice newPrice, FeatureStatMod newStatMod)
+    //     {
+    //         FeatureComponent featureComponent = base.CreateComponent<FeatureComponent>(89);
+    //         featureComponent.id = newId;
+    //         featureComponent.maxLevel = newMaxLevel;
+    //         featureComponent.price = newPrice;
+    //         featureComponent.statMod = newStatMod;
+    //         base.AddComponent(89, featureComponent);
+    //     }
+    // }
+
+    // [HarmonyPatch(typeof(GameEntity), "AddFeature", typeof(string), typeof(long), typeof(IPrice),
+    //     typeof(FeatureStatMod))]
+    // public class GameEntity_AddFeature
+    // {
+    //     public static bool Prefix(GameEntity __instance, string newId, long newMaxLevel, IPrice newPrice,
+    //         FeatureStatMod newStatMod)
+    //     {
+    //         newPrice = new CPrice(1);
+    //         return true;
+    //     }
+    // }
 }
