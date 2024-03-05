@@ -51,15 +51,15 @@ namespace TRHook.Hook
     // 	}
     // }
 
-    [HarmonyPatch(typeof(GameEntity), "AddSteamConsumeCoinsRequest", typeof(int))]
-    public class GameEntity_AddSteamConsumeCoinsRequest
-    {
-        public static bool Prefix(ref int newValue)
-        {
-            newValue = 0;
-            return true;
-        }
-    }
+    // [HarmonyPatch(typeof(GameEntity), "AddSteamConsumeCoinsRequest", typeof(int))]
+    // public class GameEntity_AddSteamConsumeCoinsRequest
+    // {
+    //     public static bool Prefix(ref int newValue)
+    //     {
+    //         newValue = 0;
+    //         return true;
+    //     }
+    // }
 
     // using System;
     // using System.Collections.Generic;
