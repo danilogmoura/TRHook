@@ -58,6 +58,7 @@
         <Compile Include="Hook\ComponentExtensions.cs"/>
         <Compile Include="Hook\FeatureBuilder.cs"/>
         <Compile Include="Hook\GameEntity.cs"/>
+        <Compile Include="Hook\ShopItem.cs"/>
         <Compile Include="Hook\SpeedHackChecker.cs"/>
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
